@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://vraink.com">
-  <title>Archives | Vraink Blog</title>
+  <title>Vraink Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="安装 Git参照官网安装，验证是否安装成功，命令git --version 安装 node.js通过 Homebrew 安装，命令pc brew install node  pc 为 proxychains4 的别名，设置为通过代理安装，提升安装速度如果还未安装 Homebrew，参照Homebrew 官网  验证安装：node -v目前版本为：v7.9.0，请尽量保证版本不要太低 安装 Hexo">
+<meta name="keywords">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Vraink Blog">
-<meta property="og:url" content="http://vraink.com/archives/index.html">
+<meta property="og:url" content="http://vraink.com/2017/04/20/hexo建站/index.html">
 <meta property="og:site_name" content="Vraink Blog">
+<meta property="og:description" content="安装 Git参照官网安装，验证是否安装成功，命令git --version 安装 node.js通过 Homebrew 安装，命令pc brew install node  pc 为 proxychains4 的别名，设置为通过代理安装，提升安装速度如果还未安装 Homebrew，参照Homebrew 官网  验证安装：node -v目前版本为：v7.9.0，请尽量保证版本不要太低 安装 Hexo">
+<meta property="og:updated_time" content="2017-04-20T03:32:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vraink Blog">
+<meta name="twitter:description" content="安装 Git参照官网安装，验证是否安装成功，命令git --version 安装 node.js通过 Homebrew 安装，命令pc brew install node  pc 为 proxychains4 的别名，设置为通过代理安装，提升安装速度如果还未安装 Homebrew，参照Homebrew 官网  验证安装：node -v目前版本为：v7.9.0，请尽量保证版本不要太低 安装 Hexo">
   
     <link rel="alternative" href="/atom.xml" title="Vraink Blog" type="application/atom+xml">
   
@@ -159,119 +164,150 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-hexo建站" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h2><p>参照官网安装，验证是否安装成功，命令<br><code>git --version</code></p>
+<h2 id="安装-node-js"><a href="#安装-node-js" class="headerlink" title="安装 node.js"></a>安装 node.js</h2><p>通过 Homebrew 安装，命令<br><code>pc brew install node</code></p>
+<blockquote>
+<p>pc 为 <a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="external">proxychains4</a> 的别名，设置为通过代理安装，提升安装速度<br>如果还未安装 Homebrew，参照<a href="https://brew.sh/" target="_blank" rel="external">Homebrew 官网</a></p>
+</blockquote>
+<p>验证安装：<code>node -v</code><br>目前版本为：<code>v7.9.0</code>，请尽量保证版本不要太低</p>
+<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>Hexo 3.x版本安装，命令<br><code>sudo npm install hexo-cli -g</code>  </p>
+<p>注意：3.0 以下版本安装命令为<code>npm install -g hexo</code>，如果用该命令安装 3.x 版本时，会出现卡在了最后一步<code>node scripts/install.js</code>。</p>
+<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。其中 folder 为站点的根目录，填写自己的文件夹名，如：Blog。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> hexo init &lt;folder&gt;</span></div><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &lt;folder&gt;</span></div><div class="line"><span class="meta">$</span><span class="bash"> npm install</span></div></pre></td></tr></table></figure></p>
+<p>此时，可以通过 <code>hexo -v</code> 命令查看 hexo 版本。  </p>
+<p>一些常用的指令：</p>
+<ul>
+<li><code>hexo clean</code> 清空缓存文件</li>
+<li><code>hexo g</code> 生成静态文件</li>
+<li><code>hexo s</code> 启动服务器</li>
+<li><code>hexo d</code> 部署网站</li>
+</ul>
+<h2 id="部署到-GitHub"><a href="#部署到-GitHub" class="headerlink" title="部署到 GitHub"></a>部署到 GitHub</h2><ol>
+<li>创建 GitHub 工程仓库，<a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank" rel="external">配置 SSH 密钥</a>  </li>
+<li>安装 hexo-deployer-git，<code>npm install hexo-deployer-git --save</code>  </li>
+<li>参考<a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="external">官网文档</a>设置根目录下的站点配置文件<code>_config.yml</code>。</li>
+</ol>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>申请域名与绑定操作参照网站教程，如<a href="http://www.jianshu.com/p/cea41e5c9b2a" target="_blank" rel="external">hexo搭建的Github博客绑定域名</a><br>由于我之前已经配置，所以仅需要将 <code>CNAME</code> 文件放置到<code>站点根目录</code>的 <code>public</code> 文件夹下。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/20/hexo建站/" class="archive-article-date">
-  	<time datetime="2017-04-20T02:24:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-20</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://vraink.com/2017/04/20/hexo建站/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/20/ceshi/" class="archive-article-date">
-  	<time datetime="2017-04-20T01:56:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-20</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/20/ceshi/">ceshi</a>
-    </h1>
+    <a href="/2017/04/20/ceshi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ceshi
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/19/hello-world/" class="archive-article-date">
-  	<time datetime="2017-04-19T14:50:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/19/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随想</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -294,8 +330,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
